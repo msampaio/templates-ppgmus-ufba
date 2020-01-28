@@ -10,4 +10,4 @@ pdf:
 
 
 clean:
-	rm -rf *.{aux,lof,log,loq,lot,toc,idx}
+	rm -rf *.{aux,lof,log,loq,lot,toc,idx,brf,bbl,blg}
