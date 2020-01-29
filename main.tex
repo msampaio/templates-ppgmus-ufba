@@ -49,7 +49,9 @@
 % ---
 % Pacotes básicos 
 % ---
-\usepackage{lmodern}			% Usa a fonte Latin Modern			
+% Adaptação para PPGMUS/PPGPROM: times
+%\usepackage{lmodern}			% Usa a fonte Latin Modern			
+\usepackage{times}			% Usa a fonte times
 \usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
 \usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
 \usepackage{indentfirst}		% Indenta o primeiro parágrafo de cada seção.
@@ -91,10 +93,124 @@
 	\fi}%
 % ---
 
+%% Adaptação para PPGMUS/PPGPROM UFBA
+\newcommand{\titulofonte}[1]{\textsf{\textbf{\MakeUppercase#1}}\\}
+      
+\renewcommand{\imprimircapa}{
+  \begin{center}
+    \large
+    \thispagestyle{empty}
+    \includegraphics[scale=0.1]{ufbaselo}\\
+    \titulofonte{UNIVERSIDADE FEDERAL DA BAHIA}
+    \titulofonte{ESCOLA DE MÚSICA}
+    \titulofonte{PROGRAMA DE PÓS-GRADUAÇÃO EM MÚSICA}
+    \vfill
+    \titulofonte{\imprimirtitulo}
+    \vfill
+    \titulofonte{\imprimirautor}
+    \vfill
+    \textsf{\imprimirlocal} \par \textsf{\imprimirdata} \par
+  \end{center} \par
+  \newpage
+}
+
+% Comandos de dados
+\providecommand{\imprimirareaconcentracao}{}
+\newcommand{\areaConcentracao}[1]{\renewcommand{\imprimirareaconcentracao}{#1}}
+
+\providecommand{\imprimirgrau}{}
+\newcommand{\grau}[1]{\renewcommand{\imprimirgrau}{#1}}
+
+\providecommand{\imprimirtipo}{}
+\newcommand{\tipo}[1]{\renewcommand{\imprimirtipo}{#1}}
+
+
+% FIXME: implementar folha de rosto
+\makeatletter
+\renewcommand{\folhaderostocontent}{
+  \begin{center}
+
+    % \vspace*{1cm}
+    {\titulofonte{\imprimirautor}}
+    %{\ABNTEXchapterfont\large\imprimirautor}
+
+    \vspace*{\fill}\vspace*{\fill}
+    \begin{center}
+      \titulofonte{\imprimirtitulo}
+      %\ABNTEXchapterfont\bfseries\Large\imprimirtitulo
+    \end{center}
+    \vspace*{\fill}
+
+    \abntex@ifnotempty{\imprimirpreambulo}{%
+      \hspace{.45\textwidth}
+      \begin{minipage}{.5\textwidth}
+        \SingleSpacing
+        \imprimirpreambulo\\
+        Área de concentração: \imprimirareaconcentracao
+       \end{minipage}%
+       \vspace*{\fill}
+    }%
+
+    % {\abntex@ifnotempty{\imprimirinstituicao}{\imprimirinstituicao\vspace*{\fill}}}
+
+    {\large\imprimirorientadorRotulo~\imprimirorientador\par}
+    \abntex@ifnotempty{\imprimircoorientador}{%
+       {\large\imprimircoorientadorRotulo~\imprimircoorientador}%
+    }%
+    \vspace*{\fill}
+
+    {\large\imprimirlocal}
+    \par
+    {\large\imprimirdata}
+    \vspace*{1cm}
+
+  \end{center}
+}
+\makeatother
+
+      
 % ---
 % Informações de dados para CAPA e FOLHA DE ROSTO
 % ---
 \input{metadados}
+
+\preambulo{\imprimirtipo{} apresentada ao \imprimirinstituicao{},
+  Escola de Música, Universidade Federal da Bahia, como requisito
+  parcial para obtenção do grau de \imprimirgrau{} em Música.}
+
+% Adaptações para PPGMUS/PPGPROM UFBA
+
+\setboolean{ABNTEXupperchapter}{true}
+\setboolean{ABNTEXuppersection}{true}
+
+% Adaptações para PPGMUS/PPGPROM UFBA
+% ---
+% Fontes padroes de part, chapter, section, subsection e subsubsection
+\renewcommand{\ABNTEXchapterfont}{\bfseries}
+\renewcommand{\ABNTEXchapterfontsize}{\normalsize}
+
+\renewcommand{\ABNTEXpartfont}{\ABNTEXchapterfont}
+\renewcommand{\ABNTEXpartfontsize}{\ABNTEXchapterfontsize}
+
+\renewcommand{\ABNTEXsectionfont}{\mdseries}
+\renewcommand{\ABNTEXsectionfontsize}{\normalsize}
+
+\renewcommand{\ABNTEXsubsectionfont}{\ABNTEXchapterfont}
+\renewcommand{\ABNTEXsubsectionfontsize}{\ABNTEXchapterfontsize}
+
+\renewcommand{\ABNTEXsubsubsectionfont}{\ABNTEXsectionfont}
+\renewcommand{\ABNTEXsubsubsectionfontsize}{\normalsize}
+
+\renewcommand{\ABNTEXsubsubsubsectionfont}{\itseries}
+\renewcommand{\ABNTEXsubsubsubsectionfontsize}{\normalsize}
+% ---
+
+
+% Adaptação do Cabecalho padrao para PPGMUS/PPGPROM UFBA
+\makepagestyle{abntheadings}
+\makeevenhead{abntheadings}{\ABNTEXfontereduzida\thepage}{}{}
+\makeoddhead{abntheadings}{}{}{\ABNTEXfontereduzida\thepage}
+\makeheadrule{abntheadings}{\textwidth}{0em}%\normalrulethickness}
 
 % ---
 % Configurações de aparência do PDF final
