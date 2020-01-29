@@ -1,8 +1,8 @@
-# Template de teses e dissertações PPGMUS/PPGPROM UFBA
+# Template de teses e dissertações PPGMUS UFBA
 
 Template [LaTeX](https://www.latex-project.org/) baseado no
-[ABNTeX](https://www.abntex.net.br/) para os Programas de
-Pós-graduação em música da UFBA (acadêmico e profissional).
+[ABNTeX](https://www.abntex.net.br/) para o Programas de Pós-graduação
+em música da UFBA.
 
 ## Como usar
 
