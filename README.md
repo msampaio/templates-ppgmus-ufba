@@ -1,11 +1,12 @@
 # Template de teses e dissertações PPGMUS UFBA
 
-Template [LaTeX](https://www.latex-project.org/) baseado no
-[ABNTeX](https://www.abntex.net.br/) para o [Programa de Pós-graduação
-em música da UFBA](http://ppgmus.ufba.br/).
+Este template [LaTeX](https://www.latex-project.org/) é baseado no
+[ABNTeX](https://www.abntex.net.br/) e foi elaborado para as teses e
+dissertações do [Programa de Pós-graduação em música da
+UFBA](http://ppgmus.ufba.br/).
 
 Originalmente, o ABNTeX demanda apenas dois arquivos, o `main.tex` e o
-`bibliography.bib`. Nesse template optou-se por repartir o documento
+`bibliography.bib`. Neste template, optou-se por repartir o documento
 em pedaços menores para evitar edições desnecessárias no `main.tex`.
 
 O PPGMUS segue o manual de estilo acadêmico de [Lubisco e Vieira
