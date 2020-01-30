@@ -8,6 +8,9 @@ Originalmente, o ABNTeX demanda apenas dois arquivos, o `main.tex` e o
 `bibliography.bib`. Nesse template optou-se por repartir o documento
 em pedaços menores para evitar edições desnecessárias no `main.tex`.
 
+O PPGMUS segue o manual de estilo acadêmico de [Lubisco e Vieira
+(2019)](https://repositorio.ufba.br/ri/handle/ri/29414).
+
 ## Como usar
 
 O repositório contém os seguintes arquivos:
