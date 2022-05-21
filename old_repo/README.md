@@ -1,5 +1,7 @@
 # Template de teses e dissertações PPGMUS UFBA
 
+**Obs**: Este template está desatualizado e não deverá ser utilizado. Será reformado.
+
 Este template [LaTeX](https://www.latex-project.org/) é baseado no
 [ABNTeX](https://www.abntex.net.br/) e foi elaborado para as teses e
 dissertações do [Programa de Pós-graduação em música da
